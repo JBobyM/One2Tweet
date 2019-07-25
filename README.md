@@ -2,6 +2,7 @@
 
 **One2Tweet** is an android app that allows a user to view his Twitter timeline. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
+Created by John Boby **Mesadieu**
 Time spent: **9** hours spent in total
 
 ## User Stories
