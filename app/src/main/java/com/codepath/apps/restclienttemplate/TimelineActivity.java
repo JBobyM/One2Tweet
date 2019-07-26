@@ -101,12 +101,12 @@ private TwitterClient client;
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                Log.e("TwitterClient", errorResponse.toString() );
+               // Log.e("TwitterClient", errorResponse.toString() );
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                Log.e("TwitterClient", responseString );
+               // Log.e("TwitterClient", responseString );
 
             }
         });

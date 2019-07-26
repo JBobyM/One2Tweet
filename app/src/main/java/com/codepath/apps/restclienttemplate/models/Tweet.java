@@ -17,7 +17,9 @@ public class Tweet {
         tweet.createdAt = jsonObject.getString("created_at");
         tweet.user = User.fromjson(jsonObject.getJSONObject("user"));
 
-
         return tweet;
     }
+
+
+
 }
