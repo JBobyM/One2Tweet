@@ -17,7 +17,8 @@
             android:id="@+id/rvTweets"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true" />
+            android:layout_alignParentTop="true"
+            />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
