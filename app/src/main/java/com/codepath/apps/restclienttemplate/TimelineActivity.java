@@ -25,12 +25,24 @@ public class TimelineActivity extends AppCompatActivity {
     private TweetsAdapter adapter;
     private List<Tweet> tweets;
     private SwipeRefreshLayout swipeContainer;
+    private EndlessRecyclerViewScrollListener scrollListener;
 
-private TwitterClient client;
+
+    private TwitterClient client;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
+
+        // For endless pagination
+        scrollListener= new EndlessRecyclerViewScrollListener(new LinearLayoutManager(this)) {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
+                loadNextDataFromAPI(page);
+
+            }
+        };
+        rvTweets.addOnScrollListener(scrollListener);
 
         client = TwitterApp.getRestClient(this);
         swipeContainer=findViewById(R.id.swipeContainer);
@@ -63,6 +75,9 @@ private TwitterClient client;
         //RecyclerView: layout manager and setup the adapter
         rvTweets.setLayoutManager(new LinearLayoutManager(this));
         rvTweets.setAdapter(adapter);
+    }
+
+    private void loadNextDataFromAPI(int offset) {
     }
 
     private void populateHomeTimeline() {
@@ -111,4 +126,7 @@ private TwitterClient client;
             }
         });
     }
+
+
+
 }
