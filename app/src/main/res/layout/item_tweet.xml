@@ -2,25 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
     android:layout_marginBottom="4dp">
 
     <ImageView
         android:id="@+id/ivProfileImage"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        tools:srcCompat="@tools:sample/avatars"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginRight="5dp"
-        />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvScreenName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/ivProfileImage"
-        android:layout_marginBottom="4dp"
+        android:textStyle="bold"
+        android:textSize="15dp"
         android:layout_alignTop="@id/ivProfileImage"
+        android:layout_marginBottom="4dp"
+        android:layout_toRightOf="@id/ivProfileImage"
         android:text="JBobyM" />
 
     <TextView
@@ -28,8 +29,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvScreenName"
-        android:autoLink="all"
+        android:textSize="20dp"
         android:layout_toRightOf="@id/ivProfileImage"
+        android:textStyle="italic"
+        android:autoLink="all"
         android:text="This is a tweet." />
 
     <TableRow
@@ -37,15 +40,26 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_alignTop="@id/ivProfileImage"
-        android:background="#008000" />
+        android:background="#00BFFF" />
 
     <TextView
         android:id="@+id/tvTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignTop="@id/ivProfileImage"
+        android:layout_alignParentRight="true"
         android:text="Timestamp" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/tvBody"
+
+
+        />
 
 
 </RelativeLayout>
