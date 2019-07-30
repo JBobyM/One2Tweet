@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:layout_marginBottom="4dp">
+    android:layout_height="wrap_content"
+    android:background="#B0C4DE">
 
     <ImageView
         android:id="@+id/ivProfileImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:scaleType="centerCrop"
         android:layout_marginRight="5dp"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -18,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:layout_alignTop="@id/ivProfileImage"
         android:layout_marginBottom="4dp"
         android:layout_toRightOf="@id/ivProfileImage"
@@ -29,7 +30,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvScreenName"
-        android:textSize="20dp"
+        android:textSize="17dp"
+        android:layout_marginBottom="40dp"
         android:layout_toRightOf="@id/ivProfileImage"
         android:textStyle="italic"
         android:autoLink="all"
@@ -48,7 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/ivProfileImage"
         android:layout_alignParentRight="true"
-        android:text="Timestamp" />
+        android:text="Timestamp"
+        android:layout_marginRight="5dp"/>
 
     <TextView
         android:id="@+id/location"
@@ -56,9 +59,8 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:layout_alignParentRight="true"
-        android:layout_alignBottom="@id/tvBody"
-
-
+        android:layout_below="@id/tvBody"
+        android:layout_marginRight="5dp"
         />
 
 

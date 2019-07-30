@@ -16,6 +16,8 @@ public class TweetDetailsActivity extends AppCompatActivity {
     ImageView ivProfile2;
     TextView tvName;
     TextView tv2;
+    TextView tv3;
+    TextView tv4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +27,15 @@ public class TweetDetailsActivity extends AppCompatActivity {
         ivProfile2 = findViewById(R.id.ivProfile2);
         tvName = findViewById(R.id.tvName);
         tv2=findViewById(R.id.tv2);
+        tv3 = findViewById(R.id.tv3);
+        tv4=findViewById(R.id.tv4);
 
         tweet = Parcels.unwrap(getIntent().getParcelableExtra(Tweet.class.getSimpleName()));
-
+        tv3.setText(tweet.user.location);
+        tv4.setText(tweet.createdAt);
         tvName.setText(tweet.getUser().screenName);
         tv2.setText(tweet.body);
         Glide.with(this).load(tweet.user.profileImageUrl).into(ivProfile2);
-
-
 
     }
 }
