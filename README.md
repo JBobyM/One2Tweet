@@ -38,7 +38,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/JBobyM/One2Tweet/blob/master/Walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/JBobyM/One2Tweet/blob/master/final_walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [GIF Maker-Editor](https://play.google.com/store/apps/details?id=com.kayak.studio.gifmaker&hl=fr).
 
