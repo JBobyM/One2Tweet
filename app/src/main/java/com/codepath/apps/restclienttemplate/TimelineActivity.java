@@ -1,8 +1,12 @@
 package com.codepath.apps.restclienttemplate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +29,7 @@ public class TimelineActivity extends AppCompatActivity {
     private List<Tweet> tweets;
     private SwipeRefreshLayout swipeContainer;
     private EndlessRecyclerViewScrollListener scrollListener;
+    private final int REQUEST_CODE = 20;
 
 
     private TwitterClient client;
@@ -102,6 +107,39 @@ public class TimelineActivity extends AppCompatActivity {
         //RecyclerView: layout manager and setup the adapter
         rvTweets.setLayoutManager(new LinearLayoutManager(this));
         rvTweets.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.compose) {
+            // Then we know compose icon is tapped
+            // Toast.makeText(this, "Compose", Toast.LENGTH_SHORT).show();
+            // navigate to a new activity
+            Intent i = new Intent(this, ComposeActivity.class);
+            startActivityForResult(i,REQUEST_CODE);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode==REQUEST_CODE && resultCode==RESULT_OK){
+            //pull data out of the data intent(Tweet)
+            Tweet tweet = data.getParcelableExtra("tweet");
+            // update the recycler view with this tweet
+            tweets.add(0,tweet);
+            adapter.notifyItemInserted(0);
+
+        }
     }
 
     private void loadNextDataFromAPI(int offset) {
