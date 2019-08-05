@@ -18,11 +18,11 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 - [x] User can **pull down to refresh tweets timeline**
-- [ ] User is using **"Twitter branded" colors and styles**
+- [x] User is using **"Twitter branded" colors and styles**
 - [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
 - [ ] User can **select "reply" from detail view to respond to a tweet**
   - [ ] User that wrote the original tweet is **automatically "@" replied in compose**
-- [ ] User can tap a tweet to **open a detailed tweet view**
+- [x] User can tap a tweet to **open a detailed tweet view**
   - [ ] User can **take favorite (and unfavorite) or reweet** actions on a tweet
 - [ ] User can **see embedded image media within a tweet** on list or detail view.
 
@@ -120,7 +120,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/JBobyM/One2Tweet/blob/master/final_walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/JBobyM/One2Tweet/blob/master/video.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [GIF Maker-Editor](https://play.google.com/store/apps/details?id=com.kayak.studio.gifmaker&hl=fr).
 
