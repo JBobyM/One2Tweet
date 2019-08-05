@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,11 +32,14 @@ public class TimelineActivity extends AppCompatActivity {
     private final int REQUEST_CODE = 20;
 
 
+
     private TwitterClient client;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
+
+
         // Find the RecyclerView
         RecyclerView rvTweets =  findViewById(R.id.rvTweets);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
@@ -116,7 +119,7 @@ public class TimelineActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.compose) {
             // Then we know compose icon is tapped
@@ -128,7 +131,7 @@ public class TimelineActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -195,5 +198,8 @@ public class TimelineActivity extends AppCompatActivity {
     }
 
 
-
+    public void floatButton(View view) {
+        Intent i = new Intent(this, ComposeActivity.class);
+        startActivityForResult(i,REQUEST_CODE);
+    }
 }

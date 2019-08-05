@@ -36,7 +36,7 @@ dependencies {
     implementation 'commons-codec:commons-codec:1.10'
     implementation 'androidx.appcompat:appcompat:1.0.0'
     // Glide for remote image loading
-    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
     // Android Async Http for sending async network requests
     implementation 'com.loopj.android:android-async-http:1.4.9'
     // Room for simple persistence with an ORM
@@ -52,4 +52,15 @@ dependencies {
     // For Parceler
     implementation 'org.parceler:parceler-api:1.1.12'
     annotationProcessor 'org.parceler:parceler:1.1.12'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.android.support:design:28.0.0'
+
+    // Picassso, because image quality using Glide isn't good
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    // Room for simple persistence with an ORM
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+
+
 }

@@ -10,6 +10,7 @@ public class User {
     public long uid;
     public String screenName;
     public String location;
+    public String profilImgBannerUrl;
 
 
     public String profileImageUrl;
@@ -21,6 +22,7 @@ public class User {
         User user = new User();
         user.name = jsonObject.getString("name");
         user.profileImageUrl = jsonObject.getString("profile_image_url_https");
+        user.profilImgBannerUrl =  jsonObject.getString("profile_banner_url");
         user.screenName = jsonObject.getString("screen_name");
         user.uid = jsonObject.getLong("id");
         user.location = jsonObject.getString("location");

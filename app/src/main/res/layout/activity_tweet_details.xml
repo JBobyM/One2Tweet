@@ -61,5 +61,22 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"/>
 
+    <TextView
+        android:id="@+id/retweets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv3"
+        android:layout_marginLeft="10dp"
+        android:text="Retweet"
+        />
+    <TextView
+        android:id="@+id/Fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv4"
+        android:layout_marginLeft="10dp"
+        android:text="Favourits"
+        />
+
 
 </RelativeLayout>

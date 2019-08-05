@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.RequestOptions;
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.apps.restclienttemplate.models.TweetDetailsActivity;
 
@@ -42,10 +44,23 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         Tweet tweet = Tweets.get(position);
         String xxx = tweet.getFormattedTimestamp(tweet.createdAt);
         holder.tvBody.setText(tweet.body);
-        holder.tvScreenName.setText(tweet.user.screenName);
+        holder.tvName.setText(tweet.user.name);
         holder.tvTime.setText(xxx);
         holder.location.setText(tweet.user.location);
-        Glide.with(context).load(tweet.user.profileImageUrl).into(holder.ivProfileImage);
+        holder.tvScreenName.setText("@"+tweet.user.screenName);
+        holder.tvLike.setText(tweet.Favourite);
+        holder.tvRetweet.setText(tweet.retweets);
+
+
+        /*Glide.with(holder.ivProfileImage).load(tweet.user.profileImageUrl)
+                .apply(new RequestOptions().fitCenter()
+                        .format(DecodeFormat.PREFER_ARGB_8888)
+                        .override(Target.SIZE_ORIGINAL))
+                        .into(holder.ivProfileImage);*/
+
+        //Glide.with(context).load(tweet.user.profileImageUrl).into(holder.ivProfileImage);
+        Glide.with(context).load(tweet.user.profilImgBannerUrl).apply(new RequestOptions().transform(new CircleCrop())).into(holder.ivProfileImage);
+        //Picasso.with(context).load(tweet.user.profilImgBannerUrl).into(holder.ivProfileImage);
 
     }
 
@@ -73,10 +88,15 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public ImageView ivProfileImage;
-        public TextView tvScreenName;
+        public TextView tvName;
         public  TextView tvBody;
         public TextView tvTime;
         public  TextView location;
+        public TextView tvScreenName;
+        public  TextView tvRetweet;
+        public  TextView tvLike;
+        public  TextView tvComment;
+
 
 
 
@@ -84,10 +104,14 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivProfileImage=itemView.findViewById(R.id.ivProfileImage);
-            tvScreenName = itemView.findViewById(R.id.tvScreenName);
+            tvName = itemView.findViewById(R.id.tvName);
             tvBody=itemView.findViewById(R.id.tvBody);
             tvTime=itemView.findViewById(R.id.tvTime);
             location=itemView.findViewById(R.id.location);
+            tvScreenName = itemView.findViewById(R.id.tvScreenName);
+            tvRetweet=itemView.findViewById(R.id.tvRetweet);
+            tvLike=itemView.findViewById(R.id.tvLike);
+            tvComment=itemView.findViewById(R.id.tvComment);
             itemView.setOnClickListener(this);
 
 

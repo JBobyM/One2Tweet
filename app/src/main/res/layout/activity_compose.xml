@@ -15,7 +15,8 @@
         android:hint="What's on your mind?"
         android:inputType="textMultiLine"
         android:minLines="5"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+       />
 
     <Button
         android:id="@+id/btnTweet"
@@ -24,4 +25,6 @@
         android:text="Tweet"
         android:layout_below="@id/etCompose"
         android:layout_alignRight="@id/etCompose"/>
+
+
 </RelativeLayout>
