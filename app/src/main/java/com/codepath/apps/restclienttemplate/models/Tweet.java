@@ -14,7 +14,7 @@ public class Tweet {
     public String createdAt;
     public String retweets;
     public String Favourite;
-    public  String Comment;
+    public String Comment;
 
     public User user;
 
@@ -28,6 +28,7 @@ public class Tweet {
         tweet.createdAt = jsonObject.getString("created_at");
         tweet.retweets = jsonObject.getString("retweet_count");
         tweet.Favourite = jsonObject.getString("favorite_count");
+        //tweet.Comment = jsonObject.getString("statuses_count");
 
 
         tweet.user = User.fromjson(jsonObject.getJSONObject("user"));

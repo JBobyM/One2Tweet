@@ -50,6 +50,7 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
         holder.tvScreenName.setText("@"+tweet.user.screenName);
         holder.tvLike.setText(tweet.Favourite);
         holder.tvRetweet.setText(tweet.retweets);
+        //holder.tvComment.setText(tweet.Comment);
 
 
         /*Glide.with(holder.ivProfileImage).load(tweet.user.profileImageUrl)
